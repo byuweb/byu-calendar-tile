@@ -1,0 +1,85 @@
+$weight: bold;
+// colors
+$navy: #002E5D;
+$medblue: #ff0099;
+
+
+// :host refers to the custom element, in our case that is <my-proile>...</my-profile>
+// general, regardless of layout
+:host {
+	min-height:400px;
+	padding: 0px;
+	display: flex;
+ }
+.section-first {
+	background: $navy;
+	color: #fff;
+}
+
+
+// always hide simple date inputted slot
+#date, #date ::slotted(*) {
+	display: none;
+}
+
+// layout specific styling
+
+:host[layout='vertical']  {
+	width: 250px;
+	flex-wrap: wrap;
+	.section-first {
+		height: 150px;
+	}
+}
+:host[layout='horizontal']  {
+	width: 300px;
+	margin: 15px;
+	.section-first {
+		width: 120px;
+	}
+}
+
+.section-first {
+
+	.time ::slotted(*){
+		color: #fff;
+	}
+}
+
+.section-second ::slotted(*) {
+	color: $medgray;
+	padding: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+
+	.title ::slotted(*) { // including a tags
+		color: $navy;
+		font-size: 18px;
+	}
+	.time ::slotted(*) {
+		font-size: 14px;
+	}
+	.location ::slotted(*) {
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+}
+.section-second ::slotted(*) {
+	width: 100%;
+}
+.byu-calendar-tile ::slotted(*) {
+	width: 100%;
+	padding: 10px 10px;
+}
+
+
+
+
+.byu-calendar-tile ::slotted(img) {
+	display: none;
+}
+
+#card-content::slotted(*) {
+	color: #444;
+}

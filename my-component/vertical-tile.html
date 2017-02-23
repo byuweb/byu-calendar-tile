@@ -1,0 +1,20 @@
+<style>/* FUSE */</style>
+
+<!-- Use the id "title" for title -->
+<div class="byu-calendar-tile" layout="vertical">
+	<div class="section-first">
+		<slot id="date" name="date">   </slot>
+		<div id="month-name"></div>
+		<div id="day-number"></div>
+		<div id="weekday"></div>
+	</div>
+	<div class="section-second">
+		<slot id="title" name="title">  </slot>
+		<slot id="time" name="time">   </slot>
+		<slot id="location" name="location"></slot>
+	</div>
+</div>
+
+
+
+

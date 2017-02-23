@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../dist/my-component.js"></script>
+	<style>
+		h2 {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+<byu-calendar-tile layout="vertical">
+	<!-- This date should be provided in the format YYYY-MM-DD  -->
+	<p slot="date">2017-02-15</p>
+	<a href="www.google.com" slot="title">My Event Title</a>
+	<p slot="time">7:00 PM</p>
+	<p slot="location">Wilkinson Ballroom</p>
+
+</byu-calendar-tile>
+
+<byu-calendar-tile layout="horizontal">
+	<!-- This date should be provided in the format YYYY-MM-DD  -->
+	<p slot="date">2017-02-15</p>
+	<a href="www.google.com" slot="title">My Event Title</a>
+	<!-- This time should include only the *Start time* not the end time, this field will be trimmed after 8 characters -->
+	<p slot="time">7:00 PM</p>
+	<!-- Layout horizontal is the only one that allows displaying the description  -->
+	<p slot="description">This is an introduction paragraph that should be very short.</p>
+	<p slot="location">Wilkinson Ballroom</p>
+
+</byu-calendar-tile>
+
+
+
+
+</body>
+</html>

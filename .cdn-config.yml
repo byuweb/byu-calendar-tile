@@ -1,0 +1,9 @@
+---
+name: BYU Calendar Tile component
+description: BYU Calendar Tile component for styling calendar events
+resources:
+  - src: dist/**
+    dest: ./
+entrypoints:
+  bootstrap.js: 'Examines browser support and downloads the appropriate component bundle'
+docs: https://github.com/byuweb/byu-calendar-tile
