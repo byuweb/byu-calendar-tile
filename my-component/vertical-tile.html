@@ -1,19 +1,21 @@
-<style>/* FUSE */</style>
+<style>${require ('./style.scss')}</style>
+<!--<link rel="stylesheet" href="https://cloud.typography.com/75214/6517752/css/fonts.css">-->
+<link type="text/css" rel="stylesheet" href="https://cloud.typography.com/75214/6517752/css/fonts.css" media="all" />
 
 <!-- Use the id "title" for title -->
-<div class="byu-calendar-tile" layout="vertical">
+<!--<div class="byu-calendar-tile" >-->
 	<div class="section-first">
 		<slot id="date" name="date">   </slot>
-		<div id="month-name"></div>
-		<div id="day-number"></div>
-		<div id="weekday"></div>
+		<div id="month-name" class="content" ></div>
+		<div id="day-number" class="content" ></div>
+		<div id="weekday" class="content" ></div>
 	</div>
 	<div class="section-second">
-		<slot id="title" name="title">  </slot>
-		<slot id="time" name="time">   </slot>
-		<slot id="location" name="location"></slot>
+		<slot id="title" class="content" name="title">  </slot>
+		<slot id="time" class="content" name="time">   </slot>
+		<slot id="location" class="content" name="location"></slot>
 	</div>
-</div>
+<!--</div>-->
 
 
 

@@ -73,7 +73,8 @@ gulp.task('watch', ['assemble'], function (done) {
         server: {
             baseDir: './'
         },
-        notify: false
+        notify: false,
+        startPath: "my-component/demo.html"
         // proxy: {
         //     target: 'http://localhost:3000',
         //     middleware: function (req, res, next) {
@@ -82,9 +83,10 @@ gulp.task('watch', ['assemble'], function (done) {
         //         next();
         //     }
         // }
+
     }, done);
 
-    gulp.watch(['index.html', './components/**', './css/*.scss'], ['assemble']);
+    gulp.watch(['index.html', './my-component/**', './css/*.scss'], ['assemble']);
     gulp.watch(['webpack.config.js'], ['clear-webpack-cache', 'assemble'])
 });
 

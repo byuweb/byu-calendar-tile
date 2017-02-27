@@ -1,85 +1,214 @@
+//import fonts
+//@import "https://cloud.typography.com/75214/6517752/css/fonts.css";
 $weight: bold;
 // colors
 $navy: #002E5D;
-$medblue: #ff0099;
+$medblue: #869DB5;
+$medgray: #767676;
 
 
 // :host refers to the custom element, in our case that is <my-proile>...</my-profile>
 // general, regardless of layout
 :host {
-	min-height:400px;
 	padding: 0px;
-	display: flex;
+	//display: flex;
+	-moz-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+
  }
 .section-first {
 	background: $navy;
 	color: #fff;
 }
+.section-second {
+	padding: 15px;
+}
+:host .content {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	font-family: "Gotham A", "Gotham B";
+}
+:host ::slotted(*){
+	font-family: "Gotham A", "Gotham B";
+}
 
+// general sections styling
+#title::slotted(*) { // including a tags
+	color: $navy;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+}
+#location::slotted(*) {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+#time::slotted(*) {
+	font-size: 14px;
+	text-transform: uppercase;
+}
 
+.section-second::slotted(*) {
+	width: 100%;
+}
+#title::slotted(*), #description::slotted(*) {
+	font-family: "Sentinel A", "Sentinel B";
+}
+#title::slotted(*) {
+	//overflow:hidden;
+	//text-overflow-multiline:ellipsis;
+}
+#weekday {
+	text-transform: uppercase;
+	font-size: 12px;
+	padding-bottom: 10px;
+}
+#location::slotted(*) {
+	color: $medgray;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 500;
+}
 // always hide simple date inputted slot
-#date, #date ::slotted(*) {
+#date, #date::slotted(*) {
 	display: none;
 }
 
 // layout specific styling
 
-:host[layout='vertical']  {
-	width: 250px;
+:host([layout='vertical']) {
+	//width: 170px;
+	max-width: 170px;
+	display: flex;
 	flex-wrap: wrap;
+	margin: 15px 8px;
 	.section-first {
-		height: 150px;
+		height: 160px;
+		width: 170px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.section-second{
+		//height: 200px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-content: space-between;
+	}
+	.section-second ::slotted(*) {
+		justify-content: center;
+	}
+	#month-name {
+		padding: 10px;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-bottom: 0px;
+	}
+	#day-number {
+		font-size: 60px;
+		margin-bottom: 10px;
+		font-weight: bold;
+	}
+	#title {
+
+	}
+	#title::slotted(*) {
+		color: $navy;
+		font-size: 18px;
+		font-weight: bold;
+		padding: 5px 0px 10px;
+		height: 120px;
+		width: 100%;
+		//background: pink;
+		display: flex;
+		justify-content: center; // should be covered by .content but needs it here too..?
+		align-content: flex-start;
+
+		//height: 140px;
+		width: 150px;
+		//white-space: nowrap;
+		overflow: hidden;
+		//text-overflow: ellipsis;
+	}
+	#time::slotted(*) {
+		font-size: 14px;
+		padding: 8px 0px;
+	}
+	#location::slotted(*){
+		color: $medgray;
+		text-align: center;
+		font-weight: 500;
 	}
 }
-:host[layout='horizontal']  {
-	width: 300px;
-	margin: 15px;
+:host([layout='horizontal'])  {
+	width: 420px;
+	margin: 10px 15px;
+	display: flex;
 	.section-first {
 		width: 120px;
 	}
-}
+	.section-second {
+		width: 300px;
+		align-items: space-between;
+	}
+	.section-second ::slotted(*) {
 
-.section-first {
-
-	.time ::slotted(*){
+	}
+	#month-abb {
+		padding: 10px;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-bottom: 0px;
+	}
+	#day-number {
+		font-size: 48px;
+		font-weight: bold;
+		//margin-bottom: 10px;
+	}
+	#time::slotted(*){
 		color: #fff;
+		display: flex;
+		justify-content: center;
+	}
+
+	#title::slotted(*) {
+		//color: $navy;
+		//font-size: 18px;
+		//font-weight: bold;
+		padding: 5px 0px 10px;
+		width: 100%;
+
+		//height: 140px;
+		//white-space: nowrap;
+		overflow: hidden;
+		//text-overflow: ellipsis;
+	}
+	#location::slotted(*) {
+		padding-top: 8px;
 	}
 }
+
 
 .section-second ::slotted(*) {
 	color: $medgray;
-	padding: 10px;
+	padding: 0px;
+	margin: 0px;
 	display: flex;
 	flex-wrap: wrap;
-	align-content: center;
-
-	.title ::slotted(*) { // including a tags
-		color: $navy;
-		font-size: 18px;
-	}
-	.time ::slotted(*) {
-		font-size: 14px;
-	}
-	.location ::slotted(*) {
-		font-size: 14px;
-		text-transform: uppercase;
-	}
-}
-.section-second ::slotted(*) {
 	width: 100%;
-}
-.byu-calendar-tile ::slotted(*) {
-	width: 100%;
-	padding: 10px 10px;
+
 }
 
-
-
-
-.byu-calendar-tile ::slotted(img) {
+:host ::slotted(img) {
 	display: none;
 }
 
-#card-content::slotted(*) {
-	color: #444;
+p, div, a {
+	font-family: "Gotham A", "Gotham B";
+}
+h1, h2, h3, h4 {
+	font-family: "Sentinel A", "Sentinel B";
 }
