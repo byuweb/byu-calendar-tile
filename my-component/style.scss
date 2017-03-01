@@ -117,7 +117,7 @@ $medgray: #767676;
 
 	}
 	#title::slotted(*) {
-		color: $navy;
+		color: $navy!important;
 		font-size: 18px;
 		font-weight: bold;
 		padding: 5px 0px 10px;
@@ -136,11 +136,11 @@ $medgray: #767676;
 	}
 	#time {
 		//padding: 8px 0px;
-		margin: 10px 0px;
+		//margin: 10px 0px;
 	}
 	#time::slotted(*) {
 		font-size: 14px;
-		padding: 8px 0px;
+		padding: 8px 0px!important;
 	}
 	#location::slotted(*){
 		color: $medgray;
@@ -154,7 +154,7 @@ $medgray: #767676;
 	display: flex;
 	.section-first {
 		width: 120px;
-		min-height: 110px;
+		min-height: 110px!important;
 	}
 	.section-second {
 		width: 300px;
