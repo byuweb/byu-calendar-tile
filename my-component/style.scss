@@ -93,6 +93,7 @@ $medgray: #767676;
 	}
 	.section-second{
 		//height: 200px;
+		padding: 15px 0px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -155,7 +156,10 @@ $medgray: #767676;
 		align-items: space-between;
 	}
 	.section-second ::slotted(*) {
-
+		width: 290px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	#month-abb {
 		padding: 10px 0px;
