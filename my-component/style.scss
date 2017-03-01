@@ -84,6 +84,7 @@ $medgray: #767676;
 	max-width: 170px;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: flex-start;
 	margin: 15px 8px;
 	.section-first {
 		height: 160px;
@@ -93,12 +94,14 @@ $medgray: #767676;
 		justify-content: center;
 	}
 	.section-second{
-		//height: 200px;
+		height: 190px;
 		padding: 15px 0px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-content: space-between;
+		align-self: flex-start;
+
 	}
 	.section-second ::slotted(*) {
 		justify-content: center;
@@ -121,18 +124,18 @@ $medgray: #767676;
 		color: $navy!important;
 		font-size: 18px;
 		font-weight: bold;
+		text-align: center;
 		padding: 5px 0px 10px;
 		height: 120px;
-		width: 100%;
 		//background: pink;
-		display: flex;
-		justify-content: center; // should be covered by .content but needs it here too..?
-		align-content: flex-start;
+		//display: flex;
+		//justify-content: center; // should be covered by .content but needs it here too..?
+		//align-content: flex-start;
 
 		//height: 140px;
 		width: 150px;
 		//white-space: nowrap;
-		overflow: hidden;
+		//overflow: hidden;
 		//text-overflow: ellipsis;
 	}
 	#time {
