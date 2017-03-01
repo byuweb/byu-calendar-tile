@@ -36,7 +36,7 @@ $medgray: #767676;
 
 // general sections styling
 #title::slotted(*) { // including a tags
-	color: $navy;
+	color: $navy!important;
 	font-size: 18px;
 	font-weight: bold;
 	text-decoration: none;
@@ -135,7 +135,8 @@ $medgray: #767676;
 		//text-overflow: ellipsis;
 	}
 	#time {
-		padding: 8px 0px;
+		//padding: 8px 0px;
+		margin: 10px 0px;
 	}
 	#time::slotted(*) {
 		font-size: 14px;
@@ -153,6 +154,7 @@ $medgray: #767676;
 	display: flex;
 	.section-first {
 		width: 120px;
+		min-height: 110px;
 	}
 	.section-second {
 		width: 300px;
@@ -160,9 +162,12 @@ $medgray: #767676;
 	}
 	.section-second ::slotted(*) {
 		width: 290px;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
+		//white-space: nowrap;
+		//overflow: hidden;
+		//text-overflow: ellipsis;
+	}
+	&.extra-wide .section-second::slotted(*) {
+		width: 360px;
 	}
 	#month-abb {
 		padding: 10px 0px;
