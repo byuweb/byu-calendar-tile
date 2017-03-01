@@ -134,6 +134,9 @@ $medgray: #767676;
 		overflow: hidden;
 		//text-overflow: ellipsis;
 	}
+	#time {
+		padding: 8px 0px;
+	}
 	#time::slotted(*) {
 		font-size: 14px;
 		padding: 8px 0px;
@@ -171,6 +174,9 @@ $medgray: #767676;
 		font-size: 48px;
 		font-weight: bold;
 		//margin-bottom: 10px;
+	}
+	#time {
+		padding: 5px 0px 10px;
 	}
 	#time::slotted(*){
 		color: #fff;
