@@ -158,7 +158,7 @@ $medgray: #767676;
 	display: flex;
 	.section-first {
 		width: 120px;
-		min-height: 110px!important;
+		min-height: 120px!important;
 	}
 	.section-second {
 		width: 300px;
@@ -182,7 +182,7 @@ $medgray: #767676;
 		//margin-bottom: 10px;
 	}
 	#time {
-		padding: 5px 0px 10px;
+		padding: 10px 0px 10px;
 	}
 	#time::slotted(*){
 		color: #fff;
