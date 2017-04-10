@@ -1,4 +1,5 @@
 'use strict';
+const util = require('byu-web-component-utils');
 // these only need to be created or established once, so they are outside the class
 const verticalTemplate = require('./vertical-tile.html');
 const horizontalTemplate = require('./horizontal-tile.html');
@@ -13,7 +14,7 @@ class ByuCalendarTile extends HTMLElement {
 
     constructor() {
         super();
-        this._shadowRoot = this.attachShadow({mode: 'open'});
+        this.attachShadow({mode: 'open'});
     }
     get layout() {
         return this.getAttribute('layout');
@@ -26,9 +27,9 @@ class ByuCalendarTile extends HTMLElement {
         }
     }
     get date(){
-        var dates = this.shadowRoot.querySelector("#date").assignedNodes();
+        var dates = this.shadowRoot.querySelector("#date-val").assignedNodes();
         if(dates.length){
-            var date = this.shadowRoot.querySelector("#date").assignedNodes()[0];
+            var date = this.shadowRoot.querySelector("#date-val").assignedNodes()[0];
             console.log(date.innerText);
             return new Date(date.innerText.trim());
         }
@@ -36,34 +37,36 @@ class ByuCalendarTile extends HTMLElement {
             return null;
         }
     }
-    connectedCallback(){
+    connectedCallback() {
         // identify which template to use
-        this._shadowRoot.innerHTML = this.layout === 'horizontal' ? horizontalTemplate : verticalTemplate;
+        let template = this.layout === 'horizontal' ? horizontalTemplate : verticalTemplate;
+        util.applyTemplate(this, 'byu-calendar-tile', template, () => {
 
-        var dateOb = this.date;
-        console.log(dateOb);
-        // --- isolate parts of the date
-        // get month
-        var monthName = months[dateOb.getMonth()];
-        console.log(monthName);
-        // get month abbreviation
-        var monthAbb = monthAbbs[dateOb.getMonth()];
+            var dateOb = this.date;
+            console.log(dateOb);
+            // --- isolate parts of the date
+            // get month
+            var monthName = months[dateOb.getMonth()];
+            console.log(monthName);
+            // get month abbreviation
+            var monthAbb = monthAbbs[dateOb.getMonth()];
 
-        // get day of the month
-        var day = dateOb.getDate();
+            // get day of the month
+            var day = dateOb.getDate();
 
-        // get day of week
-        var weekday = weekdays[dateOb.getDay()];
+            // get day of week
+            var weekday = weekdays[dateOb.getDay()];
 
-        // set those date pieces as values in the tile's divs
-        if(this.layout == 'horizontal') {
-            this._shadowRoot.getElementById('month-abb').innerHTML = monthAbb;
-        } else {
-            this._shadowRoot.getElementById('month-name').innerHTML = monthName;
-            this._shadowRoot.getElementById('weekday').innerHTML = weekday;
-        }
-        this._shadowRoot.getElementById('day-number').innerHTML = day;
+            // set those date pieces as values in the tile's divs
+            if (this.layout == 'horizontal') {
+                this.shadowRoot.querySelector('#month-abb').innerHTML = monthAbb;
+            } else {
+                this.shadowRoot.querySelector('#month-name').innerHTML = monthName;
+                this.shadowRoot.querySelector('#weekday').innerHTML = weekday;
+            }
+            this.shadowRoot.querySelector('#day-number').innerHTML = day;
 
+        });
     }
 }
 

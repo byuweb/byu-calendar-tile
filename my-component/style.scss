@@ -35,29 +35,29 @@ $medgray: #767676;
 }
 
 // general sections styling
-#title::slotted(*) { // including a tags
+#title ::slotted(*) { // including a tags
 	color: $navy!important;
 	font-size: 18px;
 	font-weight: bold;
 	text-decoration: none;
 }
-#location::slotted(*) {
+#location ::slotted(*) {
 	font-size: 14px;
 	text-transform: uppercase;
 }
-#time::slotted(*) {
+#time ::slotted(*) {
 	font-size: 14px;
 	text-transform: uppercase;
 }
 
-.section-second::slotted(*) {
+.section-second ::slotted(*) {
 	width: 100%;
 }
-#title::slotted(*), #description::slotted(*) {
+#title ::slotted(*), #description ::slotted(*) {
 	font-family: "Sentinel A", "Sentinel B";
 	line-height: 1.2;
 }
-#title::slotted(*) {
+#title ::slotted(*) {
 	//overflow:hidden;
 	//text-overflow-multiline:ellipsis;
 }
@@ -66,14 +66,14 @@ $medgray: #767676;
 	font-size: 14px;
 	padding-bottom: 10px;
 }
-#location::slotted(*) {
+#location ::slotted(*) {
 	color: $medgray;
 	text-transform: uppercase;
 	font-size: 12px;
 	font-weight: 500;
 }
 // always hide simple date inputted slot
-#date, #date::slotted(*) {
+#date, #date ::slotted(*) {
 	display: none;
 }
 
@@ -120,7 +120,7 @@ $medgray: #767676;
 	#title {
 
 	}
-	#title::slotted(*) {
+	#title ::slotted(*) {
 		color: $navy!important;
 		font-size: 18px;
 		font-weight: bold;
@@ -142,23 +142,23 @@ $medgray: #767676;
 		//padding: 8px 0px;
 		//margin: 10px 0px;
 	}
-	#time::slotted(*) {
+	#time ::slotted(*) {
 		font-size: 14px;
 		padding: 8px 0px!important;
 	}
-	#location::slotted(*){
+	#location ::slotted(*){
 		color: $medgray;
 		text-align: center;
 		font-weight: 500;
 	}
 }
 :host([layout='horizontal'])  {
-	width: 420px;
+	width: 430px;
 	margin: 10px 15px;
 	display: flex;
 	.section-first {
-		width: 120px;
-		min-height: 120px!important;
+		width: 130px;
+		min-height: 130px!important;
 	}
 	.section-second {
 		width: 300px;
@@ -167,7 +167,7 @@ $medgray: #767676;
 	.section-second ::slotted(*) {
 		width: 290px;
 	}
-	&.extra-wide .section-second::slotted(*) {
+	&.extra-wide .section-second ::slotted(*) {
 		width: 360px;
 	}
 	#month-abb {
@@ -184,14 +184,14 @@ $medgray: #767676;
 	#time {
 		padding: 10px 0px 10px;
 	}
-	#time::slotted(*){
+	#time ::slotted(*){
 		color: #fff;
 		padding: 5px 0px 10px;
 		display: flex;
 		justify-content: center;
 	}
 
-	#title::slotted(*) {
+	#title ::slotted(*) {
 		//color: $navy;
 		//font-size: 18px;
 		//font-weight: bold;
@@ -203,7 +203,7 @@ $medgray: #767676;
 		overflow: hidden;
 		//text-overflow: ellipsis;
 	}
-	#location::slotted(*) {
+	#location ::slotted(*) {
 		padding-top: 8px;
 		white-space: nowrap;
 		overflow: hidden;

@@ -4,14 +4,26 @@
 <!-- Use the id "title" for title -->
 <!--<div class="byu-calendar-tile">-->
 	<div class="section-first">
-		<slot id="date" name="date">   </slot>
+		<div id="date">
+			<slot id="date-val" name="date">   </slot>
+		</div>
 		<div id="month-abb" class="content" ></div>
 		<div id="day-number" class="content" ></div>
-		<slot id="time" class="content" name="time">   </slot>
+		<div id="time" class="content">
+			<slot name="time"></slot>
+		</div>
 	</div>
 	<div class="section-second">
-		<slot id="title" class="content" name="title">  </slot>
-		<slot id="description" class="content" name="description">  </slot>
-		<slot id="location" class="content" name="location"></slot>
+		<div id="title" class="content">
+			<slot name="title"></slot>
+		</div>
+
+		<div id="location" class="content">
+			<slot name="location"></slot>
+		</div>
+		<div id="description">
+			<slot class="content" name="description">  </slot>
+		</div>
+
 	</div>
 <!--</div>-->
