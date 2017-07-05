@@ -151,6 +151,30 @@ $medgray: #767676;
 		text-align: center;
 		font-weight: 500;
 	}
+	// mobile adjustments - for either layout
+	@media screen and (max-width: 767px) {
+		#title ::slotted(*) {
+			//font-size: 16px;
+		}
+	}
+
+	// mobile adjustments
+	@media screen and (max-width: 767px) {
+		.section-first {
+			height: 110px;
+		}
+		.section-second {
+			height: 170px;
+		}
+		#month-abb {
+			font-size: 16px;
+		}
+		#day-number {
+			font-size: 40px;
+		}
+	}
+
+
 }
 :host([layout='horizontal'])  {
 	width: 430px;
