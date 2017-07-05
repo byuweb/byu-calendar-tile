@@ -232,12 +232,14 @@ $medgray: #767676;
 	}
 // mobile adjustments
 	@media screen and (max-width: 767px) {
-		width: 100%;
+		width: 97%;
+		margin: 5px 10px;
 		.section-first {
-			width: 30%;
+			width: 40%;
+			min-height: 100px!important;
 		}
 		.section-second {
-			width: 70%;
+			width: 60%;
 		}
 		.section-second ::slotted(*) {
 			width: auto;
