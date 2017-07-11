@@ -218,6 +218,8 @@ $medgray: #767676;
 		}
 		.section-second {
 			width: 70%;
+			padding: 15px;
+			max-height: 80px;
 		}
 		.section-second ::slotted(*) {
 			width: auto;
@@ -227,6 +229,9 @@ $medgray: #767676;
 		}
 		#day-number {
 			font-size: 28px;
+		}
+		#title ::slotted(*) {
+			max-height: 75px;
 		}
 	}
 }
