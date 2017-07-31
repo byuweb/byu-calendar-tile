@@ -46,16 +46,16 @@ class ByuCalendarTile extends HTMLElement {
             console.log(dateOb);
             // --- isolate parts of the date
             // get month
-            var monthName = months[dateOb.getMonth()];
+            var monthName = months[dateOb.getUTCMonth()];
             console.log(monthName);
             // get month abbreviation
-            var monthAbb = monthAbbs[dateOb.getMonth()];
+            var monthAbb = monthAbbs[dateOb.getUTCMonth()];
 
             // get day of the month
-            var day = dateOb.getDate();
+            var day = dateOb.getUTCDate();
 
             // get day of week
-            var weekday = weekdays[dateOb.getDay()];
+            var weekday = weekdays[dateOb.getUTCDay()];
 
             // set those date pieces as values in the tile's divs
             if (this.layout == 'horizontal') {
