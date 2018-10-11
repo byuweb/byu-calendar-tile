@@ -1,5 +1,6 @@
-# This provides vertical and horizontal tiles for calendar displays.
+# DEPRECATED: Use byu-calendar-components
 
+> This provides vertical and horizontal tiles for calendar displays.
 
 This component is utilized by the Drupal Module Calendar Widget : https://github.com/byuweb/calendar_widget_d7
 
