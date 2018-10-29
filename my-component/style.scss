@@ -4,7 +4,7 @@ $weight: bold;
 // colors
 $navy: #002E5D;
 $medblue: #869DB5;
-$medgray: #767676;
+$medgray: #666;
 
 
 // :host refers to the custom element, in our case that is <my-proile>...</my-profile>
@@ -28,10 +28,10 @@ $medgray: #767676;
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	font-family: "Gotham A", "Gotham B";
+	font-family: "HCo Ringside Narrow SSm", Arial, sans-serif;
 }
 :host ::slotted(*){
-	font-family: "Gotham A", "Gotham B";
+	font-family: "HCo Ringside Narrow SSm", Arial, sans-serif;;
 }
 
 // general sections styling
@@ -54,7 +54,7 @@ $medgray: #767676;
 	width: 100%;
 }
 #title ::slotted(*), #description ::slotted(*) {
-	font-family: "Sentinel A", "Sentinel B";
+	font-family: "HCo Ringside Narrow SSm", Arial, sans-serif;;
 	line-height: 1.2;
 }
 #title ::slotted(*) {
@@ -227,8 +227,8 @@ $medgray: #767676;
 }
 
 p, div, a {
-	font-family: "Gotham A", "Gotham B";
+	font-family: "HCo Ringside Narrow SSm", Arial, sans-serif;;
 }
 h1, h2, h3, h4 {
-	font-family: "Sentinel A", "Sentinel B";
+	font-family: "HCo Ringside Narrow SSm", Arial, sans-serif;;
 }
